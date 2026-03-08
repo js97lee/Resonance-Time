@@ -28,4 +28,4 @@ npm run dev
 npm run deploy
 ```
 
-배포 후: `https://사용자명.github.io/gongmyeong-time/`
+배포 후: https://js97lee.github.io/Resonance-Time/
