@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { useLang } from '../context/LangContext'
 import { t } from '../translations'
 
@@ -15,12 +16,12 @@ export default function Hero() {
             <span>{tr.heroDate}</span>
             <span>{tr.heroVenue}</span>
           </div>
-          <a href="#register" onClick={(e) => { e.preventDefault(); document.getElementById('registration')?.scrollIntoView({ behavior: 'smooth' }); }} className="hero-cta">
+          <Link to="/register" className="hero-cta">
             {tr.heroCTA}
-          </a>
+          </Link>
         </div>
         <div className="hero-poster-wrap">
-          <img src="/assets/Poster.png" alt="공명의 시간 전시 포스터" className="hero-poster" />
+          <img src={`${import.meta.env.BASE_URL}assets/Poster.png`} alt="공명의 시간 전시 포스터" className="hero-poster" />
         </div>
       </div>
     </section>
