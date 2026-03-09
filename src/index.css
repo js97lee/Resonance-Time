@@ -476,6 +476,53 @@ body {
 .seminar-note {
   font-size: 0.9rem;
   color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.seminar-timeline .timeline {
+  list-style: none;
+}
+
+.seminar-timeline .timeline li {
+  padding: 1rem 1.25rem;
+  margin-bottom: 0.5rem;
+  background: var(--bg-card);
+  border-radius: 8px;
+  border: 1px solid var(--border-subtle);
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  transition: border-color 0.2s;
+}
+
+.seminar-timeline .timeline li:hover {
+  border-color: rgba(37, 99, 235, 0.3);
+}
+
+.seminar-timeline .timeline li.highlight {
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.12) 0%, rgba(14, 165, 233, 0.08) 100%);
+  border-color: rgba(37, 99, 235, 0.4);
+}
+
+.seminar-timeline .time {
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-right: 0.5rem;
+}
+
+.seminar-timeline .duration {
+  font-size: 0.85rem;
+  color: var(--accent-blue);
+  opacity: 0.9;
+}
+
+.seminar-timeline .timeline strong {
+  color: var(--text-primary);
+}
+
+.seminar-timeline .schedule-desc {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
 }
 
 /* ===== Exhibition Map ===== */
