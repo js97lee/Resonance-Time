@@ -544,6 +544,96 @@ body {
   font-size: 0.9rem;
 }
 
+.map-placeholder-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.map-placeholder-text {
+  font-size: 1rem;
+  color: var(--text-primary);
+}
+
+.map-enter-btn {
+  padding: 0.6rem 1.5rem;
+  font-size: 1rem;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+  backdrop-filter: blur(4px);
+}
+
+.modal-content {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  max-width: 440px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.modal-header h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0 0.25rem;
+  line-height: 1;
+}
+
+.modal-close:hover {
+  color: var(--text-primary);
+}
+
+.modal-form {
+  padding: 1.5rem;
+}
+
+.modal-form .form-group {
+  margin-bottom: 1rem;
+}
+
+.modal-form .form-group:last-of-type {
+  margin-bottom: 1.5rem;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: flex-end;
+}
+
+.modal-actions .btn-ghost,
+.modal-actions .btn-primary {
+  padding: 0.5rem 1rem;
+}
+
 /* ===== Registration ===== */
 .registration {
   background: linear-gradient(135deg, rgba(255, 77, 141, 0.08) 0%, rgba(168, 85, 247, 0.06) 100%);
