@@ -634,6 +634,46 @@ body {
   padding: 0.5rem 1rem;
 }
 
+.select-with-emoji {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.select-with-emoji .select-emoji {
+  font-size: 1.5rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.select-with-emoji select {
+  flex: 1;
+}
+
+.email-split {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.email-split .email-local {
+  flex: 1;
+  min-width: 100px;
+}
+
+.email-split .email-at {
+  color: var(--text-secondary);
+  font-weight: 500;
+  flex-shrink: 0;
+}
+
+.email-split .email-domain,
+.email-split .email-domain-input {
+  flex: 1;
+  min-width: 120px;
+}
+
 /* ===== Registration ===== */
 .registration {
   background: linear-gradient(135deg, rgba(255, 77, 141, 0.08) 0%, rgba(168, 85, 247, 0.06) 100%);
