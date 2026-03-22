@@ -1,7 +1,7 @@
 import { useLang } from '../context/LangContext'
 import { t } from '../translations'
 
-const SPONSORS_TIER1 = ['Bambu Lab', 'UMTM', '아인스페이스', '언커먼 갤러리']
+const SPONSORS_TIER1 = ['대상', 'UMTM', '아인스페이스', '언커먼 갤러리']
 const SPONSORS_TIER2 = ['단국대학교', '남서울대학교', '한국외국어대학교']
 
 export default function Sponsors() {

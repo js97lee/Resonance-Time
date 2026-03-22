@@ -11,7 +11,7 @@ export default function ExhibitionIntro() {
         <h2 className="section-title">{tr.exhibitionTitle}</h2>
         <p className="exhibition-lead">{tr.exhibitionLead}</p>
         <div className="exhibition-content">
-          <h3 className="exhibition-subtitle">{tr.exhibitionOrigin}</h3>
+          {tr.exhibitionOrigin && <h3 className="exhibition-subtitle">{tr.exhibitionOrigin}</h3>}
           {tr.exhibitionParagraphs.map((p, i) => (
             <p key={i} className="exhibition-text">{p}</p>
           ))}

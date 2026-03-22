@@ -68,6 +68,8 @@ export default function ExhibitionMap() {
     return form.emailId?.trim() && domain ? `${form.emailId.trim()}@${domain}` : ''
   }
 
+  const AINSPACE_URL = 'https://ainspace.ainetwork.ai/?village=resonance-time'
+
   const handleSubmit = (e) => {
     e.preventDefault()
     const email = getFullEmail()
@@ -75,6 +77,7 @@ export default function ExhibitionMap() {
     setModalOpen(false)
     setForm({ name: '', gender: '', emailId: '', emailDomain: '', country: '', age: '', language: '', koreanLearn: '' })
     setEmailDomainCustom('')
+    window.location.href = AINSPACE_URL
   }
 
   const resetForm = () => {
