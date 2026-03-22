@@ -107,13 +107,13 @@ export default function Seminar() {
                         />
                       </div>
                       <div className="speaker-card-name">
-                        <strong>{s.name}</strong>
-                        {s.org && <span>{s.org}</span>}
+                        <h3 className="speaker-name">{s.name}</h3>
+                        {s.org && <h6 className="speaker-org">{s.org}</h6>}
                       </div>
                     </div>
                     <div className="speaker-card-back">
-                      <strong className="speaker-back-name">{s.name}</strong>
-                      {s.org && <span className="speaker-back-org">{s.org}</span>}
+                      <h3 className="speaker-back-name">{s.name}</h3>
+                      {s.org && <h6 className="speaker-back-org">{s.org}</h6>}
                       <p className="speaker-back-bio">{s.bio}</p>
                     </div>
                   </div>

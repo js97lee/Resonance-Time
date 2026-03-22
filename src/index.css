@@ -777,12 +777,40 @@ body {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
+    align-items: stretch;
+  }
+
+  .speaker-flip-card {
+    display: flex;
+    height: 100%;
+  }
+
+  .speaker-card-inner {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+  }
+
+  .speaker-card-back {
+    flex: 1;
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .speaker-back-bio {
+    flex: 1;
   }
 }
 
 @media (min-width: 1024px) {
   .speakers-persona-grid {
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  .speaker-card-back {
+    min-height: 200px;
   }
 }
 
@@ -866,16 +894,22 @@ body {
     background: linear-gradient(transparent, rgba(0,0,0,0.85));
   }
 
-  .speaker-card-name strong {
+  .speaker-card-name .speaker-name,
+  .speaker-card-name h3 {
     display: block;
     font-size: 1.1rem;
+    font-weight: 600;
     color: var(--text-primary);
-    margin-bottom: 0.2rem;
+    margin: 0 0 0.2rem;
   }
 
-  .speaker-card-name span {
+  .speaker-card-name .speaker-org,
+  .speaker-card-name h6 {
+    display: block;
     font-size: 0.85rem;
-    color: var(--accent-blue);
+    font-weight: 500;
+    color: var(--text-secondary);
+    margin: 0;
   }
 
   .speaker-card-back {
@@ -886,21 +920,24 @@ body {
 
   .speaker-back-name {
     display: block;
-    font-size: 1.15rem;
+    font-size: 1.2rem;
+    font-weight: 600;
     color: var(--text-primary);
-    margin-bottom: 0.35rem;
+    margin: 0 0 0.35rem;
   }
 
   .speaker-back-org {
     display: block;
-    font-size: 0.85rem;
-    color: var(--accent-blue);
-    margin-bottom: 1rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    margin: 0 0 20px;
   }
 
   .speaker-back-bio {
-    font-size: 0.9rem;
-    color: var(--text-secondary);
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-primary);
     line-height: 1.7;
     margin: 0;
     flex: 1;
@@ -911,6 +948,8 @@ body {
 @media (min-width: 768px) {
   .speaker-flip-card {
     min-height: auto;
+    display: flex;
+    height: 100%;
   }
 
   .speaker-card-inner {
@@ -918,6 +957,8 @@ body {
     flex-direction: column;
     gap: 0;
     min-height: auto;
+    width: 100%;
+    flex: 1;
   }
 
   .speaker-card-front {
@@ -963,6 +1004,10 @@ body {
     padding: 1.5rem;
     position: relative;
     margin-top: 1rem;
+    flex: 1;
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
   }
 
   .speaker-card-back::before {
@@ -978,6 +1023,19 @@ body {
 
   .speaker-back-name {
     font-size: 1.25rem;
+    font-weight: 600;
+  }
+
+  .speaker-back-org {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+  }
+
+  .speaker-back-bio {
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    flex: 1;
   }
 }
 
