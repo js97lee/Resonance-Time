@@ -27,17 +27,15 @@
       var redirect = sessionStorage.getItem('spa_redirect');
       if (redirect) {
         sessionStorage.removeItem('spa_redirect');
-        var base = '/Resonance-Time';
-        var path = redirect.replace(base, '') || '/';
-        window.history.replaceState(null, null, base + (path.startsWith('/') ? path : '/' + path));
+        window.history.replaceState(null, null, redirect || '/');
       }
     })();
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <script type="module" crossorigin src="/Resonance-Time/assets/index-DF_jpoMj.js"></script>
-  <link rel="stylesheet" crossorigin href="/Resonance-Time/assets/index-D44PSJ39.css">
+  <script type="module" crossorigin src="/assets/index-Ds-pu_CE.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-CmzEGite.css">
 </head>
 <body>
   <div id="root"></div>
