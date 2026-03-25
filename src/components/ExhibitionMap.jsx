@@ -15,6 +15,7 @@ export default function ExhibitionMap() {
   const { lang } = useLang()
   const tr = t[lang]
   const [modalOpen, setModalOpen] = useState(false)
+  const [mapGlassOpen, setMapGlassOpen] = useState(true)
   const [countries, setCountries] = useState([])
   const [languages, setLanguages] = useState([])
   const [emailDomainCustom, setEmailDomainCustom] = useState('')
@@ -28,6 +29,15 @@ export default function ExhibitionMap() {
     language: '',
     koreanLearn: '',
   })
+
+  useEffect(() => {
+    if (!mapGlassOpen) return
+    const onKey = (e) => {
+      if (e.key === 'Escape') setMapGlassOpen(false)
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [mapGlassOpen])
 
   useEffect(() => {
     if (!modalOpen) return
@@ -77,7 +87,6 @@ export default function ExhibitionMap() {
     setModalOpen(false)
     setForm({ name: '', gender: '', emailId: '', emailDomain: '', country: '', age: '', language: '', koreanLearn: '' })
     setEmailDomainCustom('')
-    window.location.href = AINSPACE_URL
   }
 
   const resetForm = () => {
@@ -90,33 +99,103 @@ export default function ExhibitionMap() {
       <div className="container">
         <h2 className="section-title">{tr.mapTitle}</h2>
         <p className="map-desc">{tr.mapDesc}</p>
-        <div className="map-placeholder">
-          <div className="map-placeholder-content">
-            <span className="map-placeholder-text">{tr.mapPlaceholder}</span>
-            <button
-              type="button"
-              className="btn-primary map-enter-btn"
-              onClick={() => setModalOpen(true)}
-            >
-              {tr.mapEnterBtn}
-            </button>
+        <div className="map-preview-wrap">
+          <div className="map-placeholder map-placeholder-iframe">
+            <div className="map-iframe-area">
+              <iframe
+                src={AINSPACE_URL}
+                title={lang === 'ko' ? 'AIN SPACE 전시 공간 미리보기' : 'AIN SPACE exhibition preview'}
+                className="map-iframe"
+                loading="lazy"
+                allow="accelerometer; autoplay; camera; clipboard-write; encrypted-media; fullscreen; gyroscope; microphone; xr-spatial-tracking"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+              {mapGlassOpen && (
+                <div
+                  className="map-glass-overlay"
+                  role="dialog"
+                  aria-modal="true"
+                  aria-labelledby="map-glass-title"
+                  onClick={() => setMapGlassOpen(false)}
+                >
+                  <div className="map-glass-panel" onClick={(e) => e.stopPropagation()}>
+                    <p id="map-glass-title" className="map-glass-heading">
+                      {tr.mapPlaceholder}
+                    </p>
+                    <p className="map-glass-hint">{tr.mapIframeHint}</p>
+                    <button
+                      type="button"
+                      className="btn-primary map-enter-btn map-glass-enter"
+                      onClick={() => {
+                        setMapGlassOpen(false)
+                        setModalOpen(true)
+                      }}
+                    >
+                      {tr.mapEnterBtn}
+                    </button>
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+          {(tr.mapAinspaceCredits || []).length > 0 && (
+            <div className="map-ainspace-footer map-ainspace-footer--outside map-ainspace-footer--stack">
+              {(tr.mapAinspaceCredits || []).map((credit, i) => (
+                <div key={i} className="map-ainspace-profile">
+                  <div className="map-ainspace-footer-portrait">
+                    <img
+                      src={`${import.meta.env.BASE_URL}assets/${credit.photo || 'speaker-profile.png'}`}
+                      alt={credit.name}
+                      className="map-ainspace-avatar"
+                      width={96}
+                      height={96}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                  <div className="map-ainspace-footer-text">
+                    <p className="map-ainspace-credit-name">{credit.name}</p>
+                    <p className="map-ainspace-credit-role">{credit.role}</p>
+                    <ul className="map-ainspace-credit-bio">
+                      {(credit.bio || []).map((line, j) => (
+                        <li key={j}>{line}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+          <div className="map-agent-grid-wrap">
+            <h2 className="map-agent-title">{tr.mapAgentsTitle}</h2>
+            <div className="map-agent-grid">
+              {(tr.mapAgents || []).map((agent, i) => (
+                <article key={i} className="map-agent-card">
+                  <div className="map-agent-photo-wrap">
+                    <img
+                      src={`${import.meta.env.BASE_URL}assets/${agent.photo}`}
+                      alt=""
+                      className="map-agent-photo"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                  <div className="map-agent-body">
+                    <h3 className="map-agent-name">{agent.name}</h3>
+                    <p className="map-agent-desc">{agent.desc}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
           </div>
         </div>
       </div>
 
       {modalOpen && (
-        <div className="modal-overlay" onClick={() => { setModalOpen(false); resetForm(); }}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <div className="modal-header">
+        <div className="modal-overlay modal-overlay--ainspace-map" onClick={() => { setModalOpen(false); resetForm(); }}>
+          <div className="modal-content modal-content--ainspace" onClick={(e) => e.stopPropagation()}>
+            <div className="modal-header modal-header--ainspace">
               <h3>{tr.mapModalTitle}</h3>
-              <button
-                type="button"
-                className="modal-close"
-                onClick={() => { setModalOpen(false); resetForm(); }}
-                aria-label="닫기"
-              >
-                ×
-              </button>
             </div>
             <form onSubmit={handleSubmit} className="modal-form">
               <div className="form-group">

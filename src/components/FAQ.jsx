@@ -23,8 +23,6 @@ export default function FAQ() {
             </div>
           ))}
         </div>
-        <p className="faq-more">{tr.faqMore}</p>
-        <a href={`mailto:${tr.faqEmail}`} className="btn-primary">{tr.faqCTA}</a>
       </div>
     </section>
   )

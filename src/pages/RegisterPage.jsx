@@ -46,9 +46,9 @@ export default function RegisterPage() {
       interestDisplay: form.interest === 'other' ? form.interestOther : (tr.formInterestOptions?.[form.interest] || form.interest),
       submittedAt: new Date().toISOString(),
     }
-    addRsvp(data)
-    sendInvitationEmail(data).catch(() => {})
-    navigate('/result-rsvp', { state: data })
+    const record = addRsvp(data)
+    sendInvitationEmail(record).catch(() => {})
+    navigate('/result-rsvp', { state: record })
   }
 
   return (

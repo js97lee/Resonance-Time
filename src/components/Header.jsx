@@ -1,13 +1,18 @@
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { useLang } from '../context/LangContext'
 import { t } from '../translations'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
-export default function Header() {
+const NAV_SECTIONS = ['exhibition', 'seminar', 'visit', 'sponsors']
+
+export default function Header({ onOpenRegister }) {
   const { lang, setLang } = useLang()
   const tr = t[lang]
   const [menuOpen, setMenuOpen] = useState(false)
+  const [activeSection, setActiveSection] = useState(null)
   const navigate = useNavigate()
+  const { pathname } = useLocation()
+  const isHome = pathname === '/' || pathname === ''
 
   const scrollTo = (id) => {
     const el = document.getElementById(id)
@@ -15,7 +20,34 @@ export default function Header() {
     setMenuOpen(false)
   }
 
-  const isHome = useLocation().pathname === '/' || useLocation().pathname === ''
+  useEffect(() => {
+    if (!isHome) {
+      setActiveSection(null)
+      return
+    }
+    const headerOffset = 96
+    const updateActive = () => {
+      const y = window.scrollY + headerOffset
+      let active = null
+      for (const id of NAV_SECTIONS) {
+        const el = document.getElementById(id)
+        if (!el) continue
+        if (el.offsetTop <= y) active = id
+      }
+      setActiveSection(active)
+    }
+    updateActive()
+    window.addEventListener('scroll', updateActive, { passive: true })
+    window.addEventListener('resize', updateActive)
+    return () => {
+      window.removeEventListener('scroll', updateActive)
+      window.removeEventListener('resize', updateActive)
+    }
+  }, [isHome])
+  const openRegisterModal = () => {
+    onOpenRegister?.()
+    setMenuOpen(false)
+  }
 
   return (
     <header className="header">
@@ -39,16 +71,34 @@ export default function Header() {
               ×
             </button>
           )}
-          <button onClick={() => isHome ? scrollTo('exhibition') : navigate('/')}>{tr.navIntro}</button>
-          <div className="header-dropdown">
-            <button className="dropdown-trigger">{tr.navProgram}</button>
-            <div className="dropdown-menu">
-              <button onClick={() => isHome ? scrollTo('program') : navigate('/')}>{tr.navInteractive}</button>
-              <button onClick={() => isHome ? scrollTo('seminar') : navigate('/')}>{tr.navSeminar}</button>
-            </div>
-          </div>
-          <button onClick={() => isHome ? scrollTo('visit') : navigate('/')}>{tr.navVisit}</button>
-          <button onClick={() => isHome ? scrollTo('sponsors') : navigate('/')}>{tr.navSponsors}</button>
+          <button
+            type="button"
+            className={`nav-link ${activeSection === 'exhibition' ? 'active' : ''}`}
+            onClick={() => (isHome ? scrollTo('exhibition') : navigate('/'))}
+          >
+            {tr.navIntro}
+          </button>
+          <button
+            type="button"
+            className={`nav-link ${activeSection === 'seminar' ? 'active' : ''}`}
+            onClick={() => (isHome ? scrollTo('seminar') : navigate('/'))}
+          >
+            {tr.navSeminar}
+          </button>
+          <button
+            type="button"
+            className={`nav-link ${activeSection === 'visit' ? 'active' : ''}`}
+            onClick={() => (isHome ? scrollTo('visit') : navigate('/'))}
+          >
+            {tr.navVisit}
+          </button>
+          <button
+            type="button"
+            className={`nav-link ${activeSection === 'sponsors' ? 'active' : ''}`}
+            onClick={() => (isHome ? scrollTo('sponsors') : navigate('/'))}
+          >
+            {tr.navSponsors}
+          </button>
           {menuOpen && (
             <div className="mobile-menu-actions">
               <div className="lang-nav">
@@ -56,7 +106,7 @@ export default function Header() {
                 <span className="lang-divider">|</span>
                 <button className={`lang-btn ${lang === 'en' ? 'active' : ''}`} onClick={() => setLang('en')}>English</button>
               </div>
-              <Link to="/register" className="btn-nav-register" onClick={() => setMenuOpen(false)}>{tr.navRegister}</Link>
+              <button type="button" className="btn-nav-register" onClick={openRegisterModal}>{tr.navRegister}</button>
             </div>
           )}
         </nav>
@@ -67,7 +117,7 @@ export default function Header() {
             <span className="lang-divider">|</span>
             <button className={`lang-btn ${lang === 'en' ? 'active' : ''}`} onClick={() => setLang('en')}>English</button>
           </div>
-          <Link to="/register" className="btn-nav-register">{tr.navRegister}</Link>
+          <button type="button" className="btn-nav-register" onClick={openRegisterModal}>{tr.navRegister}</button>
         </div>
 
         <button className="header-toggle" onClick={() => setMenuOpen(!menuOpen)} aria-label="메뉴">

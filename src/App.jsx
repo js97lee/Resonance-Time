@@ -1,30 +1,31 @@
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, Navigate } from 'react-router-dom'
+import { useState } from 'react'
 import Header from './components/Header'
 import Hero from './components/Hero'
 import ExhibitionIntro from './components/ExhibitionIntro'
-import Program from './components/Program'
 import Seminar from './components/Seminar'
 import ExhibitionMap from './components/ExhibitionMap'
-import Registration from './components/Registration'
 import Visit from './components/Visit'
+import CurvedLoopBanner from './components/CurvedLoopBanner'
 import Sponsors from './components/Sponsors'
 import FAQ from './components/FAQ'
 import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop'
-import MobilePreviewBtn from './components/MobilePreviewBtn'
-import RegisterPage from './pages/RegisterPage'
+import BackgroundMusic from './components/BackgroundMusic'
 import ResultRsvpPage from './pages/ResultRsvpPage'
-import RSVPDashboardPage from './pages/RSVPDashboardPage'
+import VerifyPage from './pages/VerifyPage'
+import ScanPage from './pages/ScanPage'
+import RevpPage from './pages/RevpPage'
+import RegisterModal from './components/RegisterModal'
 
-function HomePage() {
+function HomePage({ onOpenRegister }) {
   return (
     <>
-      <Hero />
+      <Hero onOpenRegister={onOpenRegister} />
       <ExhibitionIntro />
-      <Program />
-      <Seminar />
+      <Seminar onOpenRegister={onOpenRegister} />
       <ExhibitionMap />
-      <Registration />
+      <CurvedLoopBanner />
       <Visit />
       <Sponsors />
       <FAQ />
@@ -33,20 +34,27 @@ function HomePage() {
 }
 
 function App() {
+  const [registerOpen, setRegisterOpen] = useState(false)
+
   return (
     <>
-      <Header />
+      <Header onOpenRegister={() => setRegisterOpen(true)} />
+      <BackgroundMusic />
       <ScrollToTop />
-      <MobilePreviewBtn />
       <main className="onepage">
         <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/register" element={<RegisterPage />} />
+          <Route path="/" element={<HomePage onOpenRegister={() => setRegisterOpen(true)} />} />
+          <Route path="/register" element={<Navigate to="/" replace />} />
           <Route path="/result-rsvp" element={<ResultRsvpPage />} />
-          <Route path="/RSVP-dashboard" element={<RSVPDashboardPage />} />
+          <Route path="/verify" element={<VerifyPage />} />
+          <Route path="/scan" element={<ScanPage />} />
+          <Route path="/rsvp" element={<RevpPage />} />
+          <Route path="/revp" element={<Navigate to="/rsvp" replace />} />
+          <Route path="/RSVP-dashboard" element={<Navigate to="/rsvp" replace />} />
         </Routes>
       </main>
       <Footer />
+      <RegisterModal isOpen={registerOpen} onClose={() => setRegisterOpen(false)} />
     </>
   )
 }

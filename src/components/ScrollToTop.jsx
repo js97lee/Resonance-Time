@@ -21,8 +21,9 @@ export default function ScrollToTop() {
       className="floating-scroll-top"
       onClick={scrollToTop}
       aria-label="맨 위로"
+      title="맨 위로"
     >
-      ↑
+      <img src={`${import.meta.env.BASE_URL}assets/icon-top.png`} alt="" aria-hidden="true" className="floating-icon-img" />
     </button>
   )
 }
