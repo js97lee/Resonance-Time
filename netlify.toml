@@ -1,0 +1,16 @@
+# Netlify: main 푸시 시 자동 빌드 (대시보드에서 GitHub 저장소 연결 필요)
+# GitHub Pages는 npm run deploy(gh-pages) — base 경로 /Resonance-Time/
+# Netlify는 보통 루트(/) 배포 → vite base 기본값 '/' 사용 (VITE_BASE_PATH 불필요)
+
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# React Router 클라이언트 라우트
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
