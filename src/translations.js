@@ -79,12 +79,12 @@ export const t = {
       { id: 6, title: 'Panel Discussion | Resonance Forum', topic: 'K-POP 인터랙션 경험의 미래', speaker: '전 연사', desc: '언어교육, 인지과학, AI 기술, 인터랙티브 미디어, 미디어아트가 만나는 지점에서 어떤 새로운 문화 경험이 가능할지 탐색하며, 교육과 콘텐츠, 전시가 연결되는 미래를 함께 그려본다.' },
     ],
     seminarSpeakers: [
-      { name: '한윤정', org: '남서울대학교 글로벌한국어문화학과 교수', photo: 'speaker-han-yoonjeong.png', bio: '한국어교육과 문화 기반 언어 학습을 연구하고 있다. K-컬처 콘텐츠와 에듀테크를 활용한 한국어교육 및 외국인 학습자 대상 문화 경험 기반 학습 설계를 수행하고 있다. 문화와 언어를 통합하는 교육 모델을 제안하고 있다.' },
-      { name: '정효정', org: '단국대학교 바이오헬스융합학부 학부장', photo: 'speaker-jeong-hyojeong.png', bio: '바이오헬스 혁신융합대학 및 K-컬처 인문사회융합인재양성사업단 교수학습혁신센터장을 맡고 있다. Educational Technology 기반 디자인씽킹, AI·XR 학습환경, 디지털 헬스케어 서비스디자인을 연구하고 있다. 융합교육과 마이크로디그리 설계, AX-EL 기반 학습혁신 모델 개발 및 국내외 컨소시엄 교육 협력 프로젝트를 수행하고 있다.' },
+      { name: '한윤정', org: '남서울대학교 글로벌한국어문화학과 교수', photo: 'speaker-jeong-hyojeong.png', bio: '한국어교육과 문화 기반 언어 학습을 연구하고 있다. K-컬처 콘텐츠와 에듀테크를 활용한 한국어교육 및 외국인 학습자 대상 문화 경험 기반 학습 설계를 수행하고 있다. 문화와 언어를 통합하는 교육 모델을 제안하고 있다.' },
+      { name: '정효정', org: '단국대학교 바이오헬스융합학부 학부장', photo: 'speaker-lee-jisoo.png', bio: '바이오헬스 혁신융합대학 및 K-컬처 인문사회융합인재양성사업단 교수학습혁신센터장을 맡고 있다. Educational Technology 기반 디자인씽킹, AI·XR 학습환경, 디지털 헬스케어 서비스디자인을 연구하고 있다. 융합교육과 마이크로디그리 설계, AX-EL 기반 학습혁신 모델 개발 및 국내외 컨소시엄 교육 협력 프로젝트를 수행하고 있다.' },
       {
         name: '이지수',
         org: 'Founder & CEO, RealDay Studio',
-        photo: 'speaker-lee-jisoo.png',
+        photo: 'speaker-lee-yum.png',
         bio: [
           '인터랙티브 기술과 AI 기반 시스템을 결합한 경험 중심 디지털 솔루션 기업 RealDay Studio의 대표로 활동하고 있다.',
           'HCI 기반 사용자 행동과 감정 데이터를 분석하고, XR 및 피지컬 AI를 통해 디지털과 현실을 연결하는 인터랙티브 경험을 설계한다.',
@@ -93,7 +93,7 @@ export const t = {
       },
       { name: '김상균', org: '경희대학교 경영대학원 교수', photo: 'speaker-kim-sangkyun.png', bio: '인지과학 기반 게이미피케이션, 메타버스, 인공지능, 경험경제, 인터랙티브 콘텐츠 등 인간의 경험과 마음을 연구하고 있다. 게임 및 참여형 경험 설계를 중심으로 기업·교육·문화 산업의 몰입형 콘텐츠 전략을 연구하고 있으며, 대중 강연과 저술 활동을 이어가고 있다.' },
       { name: '김주섭', org: '서강대학교 아트&테크놀로지학과 초대 학과장', photo: 'speaker-kim-jooseop.png', bio: '미국 Rhythm & Hues Studios에서 근무한 경력이 있다. University of Maryland, College Park에서 전기컴퓨터공학 박사 학위를 받았다.' },
-      { name: '이윰', org: 'IUM SPACE', photo: 'speaker-lee-yum.png', bio: '미디어아트와 인터랙티브 전시를 중심으로 활동하며, 감정·기억·참여 경험을 결합한 인터랙티브 작품을 제작하고 있다. 관객의 움직임, 데이터, 사운드 등을 활용해 인간의 감각 경험을 확장하는 작업을 진행하고 있으며, 전시 공간에서 관객 참여형 예술 경험을 탐구하고 있다.' },
+      { name: '이윰', org: 'IUM SPACE', photo: 'speaker-han-yoonjeong.png', bio: '미디어아트와 인터랙티브 전시를 중심으로 활동하며, 감정·기억·참여 경험을 결합한 인터랙티브 작품을 제작하고 있다. 관객의 움직임, 데이터, 사운드 등을 활용해 인간의 감각 경험을 확장하는 작업을 진행하고 있으며, 전시 공간에서 관객 참여형 예술 경험을 탐구하고 있다.' },
     ],
     seminarAcknowledgement: '본 전시 및 포럼은 2023년 한국연구재단의 지원을 받아 수행된 연구과제 「메타버스 시대 외국인 유학생의 한국어 교육을 위한 메타버시티 구축 및 적용 연구」(NRF-2023S1A5A2A21086427)의 연구성과 확산 활동의 일환으로 개최되었다.',
     seminarAcknowledgementEn: 'This exhibition and forum were organized as part of the project "Metaversity Development and Application for Korean Language Education of International Students in the Metaverse Era," supported by the National Research Foundation of Korea (NRF-2023S1A5A2A21086427).',
@@ -385,12 +385,12 @@ export const t = {
       { id: 6, title: 'Panel Discussion | Resonance Forum', topic: 'Future of K-POP Interaction Experience', speaker: 'All Speakers', desc: 'Exploring what new cultural experiences are possible where language education, cognitive science, AI technology, interactive media, and media art meet, and envisioning a future where education, content, and exhibition connect.' },
     ],
     seminarSpeakers: [
-      { name: 'Han Yun-jeong', org: 'Professor, Dept. of Global Korean Language and Culture, Namseoul University', photo: 'speaker-han-yoonjeong.png', bio: 'Research in Korean language education and culture-based language learning. Uses K-culture content and edutech in Korean language education; designs culture-based learning for international learners. Proposes education models that integrate culture and language.' },
-      { name: 'Jeong Hyo-jeong', org: 'Dean, Dept. of Bio-Health Convergence, Dankook University', photo: 'speaker-jeong-hyojeong.png', bio: 'Director of the Teaching and Learning Innovation Center, Bio-Health Innovation Convergence College and K-Culture Humanities & Social Convergence Talent Nurturing Project. Research in design thinking, AI·XR learning environments, and digital healthcare service design. Designs convergence education and micro-degrees; develops AX-EL-based learning innovation models and domestic/international consortium education projects.' },
+      { name: 'Han Yun-jeong', org: 'Professor, Dept. of Global Korean Language and Culture, Namseoul University', photo: 'speaker-jeong-hyojeong.png', bio: 'Research in Korean language education and culture-based language learning. Uses K-culture content and edutech in Korean language education; designs culture-based learning for international learners. Proposes education models that integrate culture and language.' },
+      { name: 'Jeong Hyo-jeong', org: 'Dean, Dept. of Bio-Health Convergence, Dankook University', photo: 'speaker-lee-jisoo.png', bio: 'Director of the Teaching and Learning Innovation Center, Bio-Health Innovation Convergence College and K-Culture Humanities & Social Convergence Talent Nurturing Project. Research in design thinking, AI·XR learning environments, and digital healthcare service design. Designs convergence education and micro-degrees; develops AX-EL-based learning innovation models and domestic/international consortium education projects.' },
       {
         name: 'Lee Ji-soo',
         org: 'Founder & CEO, RealDay Studio',
-        photo: 'speaker-lee-jisoo.png',
+        photo: 'speaker-lee-yum.png',
         bio: [
           'CEO of RealDay Studio, an experience-driven digital solutions company that combines interactive technology and AI-based systems.',
           'Through HCI, she analyzes user behavior and emotional data, and designs interactive experiences that connect digital and physical realms via XR and physical AI.',
@@ -399,7 +399,7 @@ export const t = {
       },
       { name: 'Kim Sang-kyun', org: 'Professor, Graduate School of Business, Kyung Hee University', photo: 'speaker-kim-sangkyun.png', bio: 'Research in gamification, metaverse, AI, experience economy, and interactive content based on cognitive science. Focuses on game and participatory experience design for immersive content strategy in business, education, and cultural industries. Public lectures and publications on game thinking and immersive experience design.' },
       { name: 'Kim Joo-seop', org: 'Founding Chair, Dept. of Art & Technology, Sogang University', photo: 'speaker-kim-jooseop.png', bio: 'Formerly at Rhythm & Hues Studios (US). Ph.D. in Electrical and Computer Engineering, University of Maryland, College Park.' },
-      { name: 'Lee Yum', org: 'IUM SPACE', photo: 'speaker-lee-yum.png', bio: 'Artist focusing on media art and interactive exhibition, creating interactive works combining emotion, memory, and participatory experience. Uses audience movement, data, and sound to expand human sensory experience, exploring audience-participatory artistic experience in exhibition spaces.' },
+      { name: 'Lee Yum', org: 'IUM SPACE', photo: 'speaker-han-yoonjeong.png', bio: 'Artist focusing on media art and interactive exhibition, creating interactive works combining emotion, memory, and participatory experience. Uses audience movement, data, and sound to expand human sensory experience, exploring audience-participatory artistic experience in exhibition spaces.' },
     ],
     seminarAcknowledgement:
       '본 전시 및 포럼은 2023년 한국연구재단의 지원을 받아 수행된 연구과제 「메타버스 시대 외국인 유학생의 한국어 교육을 위한 메타버시티 구축 및 적용 연구」(NRF-2023S1A5A2A21086427)의 연구성과 확산 활동의 일환으로 개최되었다.',
