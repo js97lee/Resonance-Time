@@ -93,7 +93,7 @@ export const t = {
       },
       { name: '김상균', org: '경희대학교 경영대학원 교수', photo: 'speaker-kim-sangkyun.png', bio: '인지과학 기반 게이미피케이션, 메타버스, 인공지능, 경험경제, 인터랙티브 콘텐츠 등 인간의 경험과 마음을 연구하고 있다. 게임 및 참여형 경험 설계를 중심으로 기업·교육·문화 산업의 몰입형 콘텐츠 전략을 연구하고 있으며, 대중 강연과 저술 활동을 이어가고 있다.' },
       { name: '김주섭', org: '서강대학교 아트&테크놀로지학과 초대 학과장', photo: 'speaker-kim-jooseop.png', bio: '미국 Rhythm & Hues Studios에서 근무한 경력이 있다. University of Maryland, College Park에서 전기컴퓨터공학 박사 학위를 받았다.' },
-      { name: '이윰', org: 'IUM SPACE', photo: 'speaker-han-yoonjeong.png', bio: '미디어아트와 인터랙티브 전시를 중심으로 활동하며, 감정·기억·참여 경험을 결합한 인터랙티브 작품을 제작하고 있다. 관객의 움직임, 데이터, 사운드 등을 활용해 인간의 감각 경험을 확장하는 작업을 진행하고 있으며, 전시 공간에서 관객 참여형 예술 경험을 탐구하고 있다.' },
+      { name: '이윰', org: 'IUM SPACE', photo: 'speaker-han-yoonjeong.png', bio: '30년 경력의 현대미술가이자 AI 아트 콘텐츠 스튜디오 이윰스페이스의 아티스트 디렉터. 국내외 10회 개인전을 개최하고 국립현대미술관에 작품이 소장되어 있다. 〈조선의 앨리스〉, 〈신비화원도〉, 〈해세가도〉 등 K-컬처·K-헤리티지 테마의 미디어아트와 멀티플랫폼 콘텐츠를 제작하고 있으며, 중앙미디어아트 공모전 대상(2025), 대한민국 AI 콘텐츠 어워즈 Pitch the Future 음악 부문 1위(2025), 어반브레이크 AI 아티스트 어워즈 최우수상(2025) 등을 수상했다. 『AI 아트의 일곱 가지 창의성』 저자. 국가유산청 AI 분야 정책자문위원, 문화체육관광부 장관 직속 미술·AI 분야 정책자문위원으로 활동하고 있다.' },
     ],
     seminarAcknowledgement: '본 전시 및 포럼은 2023년 한국연구재단의 지원을 받아 수행된 연구과제 「메타버스 시대 외국인 유학생의 한국어 교육을 위한 메타버시티 구축 및 적용 연구」(NRF-2023S1A5A2A21086427)의 연구성과 확산 활동의 일환으로 개최되었다.',
     seminarAcknowledgementEn: 'This exhibition and forum were organized as part of the project "Metaversity Development and Application for Korean Language Education of International Students in the Metaverse Era," supported by the National Research Foundation of Korea (NRF-2023S1A5A2A21086427).',
