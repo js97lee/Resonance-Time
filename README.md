@@ -9,22 +9,23 @@ npm install
 npm run dev
 ```
 
-## GitHub Pages 배포 (main + docs)
+## GitHub Pages 배포
 
-1. GitHub 저장소 **Settings** → **Pages**
-2. **Source**: `Deploy from a branch`
-3. **Branch**: `main` / **Folder**: `/docs`
-4. 로컬에서 빌드 후 `main`에 푸시
+### 방법 1: GitHub Actions (자동)
+
+1. GitHub에서 새 저장소 생성 (예: `gongmyeong-time`)
+2. 로컬에서 푸시:
+   ```bash
+   git remote add origin https://github.com/사용자명/gongmyeong-time.git
+   git push -u origin main
+   ```
+3. 저장소 **Settings** → **Pages** → **Source**: `GitHub Actions` 선택
+4. `main` 브랜치에 푸시할 때마다 자동 배포됨
+
+### 방법 2: npm deploy (수동)
 
 ```bash
-npm run build
-git add .
-git commit -m "build: update docs output"
-git push origin main
+npm run deploy
 ```
 
-배포 후: https://time-of-resonance-2026.com/
-
-## 운영 문서
-
-- RSVP/QR 안내: `docs-guides/RSVP-QR.md`
+배포 후: https://js97lee.github.io/Resonance-Time/

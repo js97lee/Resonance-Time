@@ -1,9 +1,10 @@
 # Netlify: main 푸시 시 자동 빌드 (대시보드에서 GitHub 저장소 연결 필요)
-# 현재 빌드 산출물은 docs/로 출력됨 (GitHub Pages main/docs 전략과 동일)
+# GitHub Pages는 npm run deploy(gh-pages) — base 경로 /Resonance-Time/
+# Netlify는 보통 루트(/) 배포 → vite base 기본값 '/' 사용 (VITE_BASE_PATH 불필요)
 
 [build]
   command = "npm run build"
-  publish = "docs"
+  publish = "dist"
 
 [build.environment]
   NODE_VERSION = "20"
