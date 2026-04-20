@@ -13,6 +13,9 @@ npm-debug.log*
 .env.local
 .env.*.local
 
+# Netlify CLI (로컬 연결 상태)
+.netlify/
+
 # Editor
 .DS_Store
 *.swp
